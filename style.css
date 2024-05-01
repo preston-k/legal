@@ -33,3 +33,37 @@ body {
   border: 2px solid black;
   border-radius: 10px;
 }
+.picker {
+  font-family: 'Poppins';
+  text-align: center;
+}
+.head {
+  font-size: 30px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.policylist {
+  height: 100px;
+  width: 90%;
+  min-width: 300px;
+  border: 2px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+  color: black; 
+}
+.policytitles {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policylist:hover {
+  transform: scale(1.01);
+}
