@@ -24,14 +24,16 @@ body {
   min-width: 50px;
 }
 .selection {
-  width: 30%;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 50px;
+  width: 300px;
   aspect-ratio: 1;
   border: 2px solid black;
   border-radius: 10px;
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.selection:hover {
+  transform: scale(1.02);
 }
 .picker {
   font-family: 'Poppins';
@@ -75,10 +77,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #ebedeb;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 .content-head {
   font-weight: 700;
@@ -146,4 +146,12 @@ body {
 #gohome:hover{
   transform: translate(25px, 0);
   transition: 0.15s;
+}
+#selection-holder {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: wrap;
+  flex-wrap: wrap;
 }
