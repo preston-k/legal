@@ -67,3 +67,83 @@ body {
 .policylist:hover {
   transform: scale(1.01);
 }
+.section {
+  font-family: 'Poppins';
+  width: 80vw;
+  margin: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ebedeb;
+  padding: 10px;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.content-head {
+  font-weight: 700;
+  text-decoration: underline;
+  margin: 0;
+}
+.content-paragraph {
+  font-size: 14px;
+  margin: 0;
+}
+.content-list {
+  font-size: 14px;
+}
+.policy-title {
+  width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#gohomeword {
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-orientation: mixed;
+  margin: 0
+}
+#gohome {
+  width: 100px;
+  border: 2px solid black;
+  height: 75px;
+  position: fixed;
+  top: 25px;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+  background-color: white;
+  cursor: pointer;
+  z-index: 99999;
+  display: flex;
+  left: -25px;
+  transform: translate(0, 0);
+  transition: 0.15s;
+}
+#words-home {
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 75px;
+  font-size: 12px;
+}
+#gohomeright {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#words-home {
+  width: 25px;
+  height: 75px;
+}
+#homeimg {
+  width: 70px;
+}
+#gohome:hover{
+  transform: translate(25px, 0);
+  transition: 0.15s;
+}
