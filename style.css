@@ -166,3 +166,32 @@ body {
   font-size: 16px;
   font-style: italic;
 }
+.btt {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  background-color: #7EC8E3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  cursor: pointer;
+}
+.btt-holder {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+.btt-img {
+  width: 47px;
+  height: 47px;
+}
