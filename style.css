@@ -1,5 +1,6 @@
 body {
   font-family: 'Poppins';
+  line-height: 1.5;
 }
 .header {
   font-weight: 500;
@@ -90,7 +91,7 @@ body {
   margin: 0;
 }
 .content-list {
-  font-size: 14px;
+  font-size: 15px;
 }
 .policy-title {
   width: 100%;
