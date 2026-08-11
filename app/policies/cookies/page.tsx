@@ -1,48 +1,53 @@
-'use client'
+import type { Metadata } from 'next'
 import PolicyLayout from '@/components/PolicyLayout'
-import { PolicyTitle, PolicyLastUpdated, PolicyH2, PolicyH3, PolicyP, PolicyUl } from '@/components/PolicyContent'
+import { PolicyH2, PolicyH3, PolicyP, PolicyUl, PolicyEmail } from '@/components/PolicyContent'
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description: 'How PrestonKwei.com uses cookies and similar tracking technologies.',
+}
 
 const CookiePolicy = () => {
   return (
-    <PolicyLayout>
-      <PolicyTitle>Cookie Policy</PolicyTitle>
-      <PolicyLastUpdated>Last updated: January 10, 2025</PolicyLastUpdated>
-      <PolicyP>This Cookie Policy explains how PrestonKwei.com (&apos;Site&apos;) uses cookies and similar technologies to enhance your experience, analyze site performance, and provide personalized content. By using this Site, you agree to the use of cookies as outlined in this policy.</PolicyP>
+    <PolicyLayout title='Cookie Policy' lastUpdated='August 10, 2026' description='How we use cookies and similar technologies, and the choices available to you.'>
+      <PolicyP>This Cookie Policy explains how PrestonKwei.com and its suite of applications (the &quot;Services&quot;) use cookies and similar technologies. By using the Services, you consent to the use of cookies as described in this policy and in our Privacy Policy.</PolicyP>
+
       <PolicyH2>What Are Cookies?</PolicyH2>
-      <PolicyP>Cookies are small text files that are downloaded onto your device when you visit a website. They serve various purposes, such as improving functionality, remembering user preferences, and enabling website features. Cookies can be classified as either session cookies, which are temporary and deleted when you close your browser, or persistent cookies, which remain on your device for a set period or until deleted manually. These files do not typically identify you personally but are used to enhance your online experience and streamline interactions with our Site.</PolicyP>
-      <PolicyP>Cookies are essential to many modern websites, enabling key functions like secure login, shopping carts, and tailored content delivery. They help us understand how visitors interact with our Site and allow us to provide a more personalized and efficient browsing experience. By understanding the different types of cookies and their roles, you can better manage your preferences and make informed choices about their use.</PolicyP>
+      <PolicyP>Cookies are small text files downloaded to your device when you visit a website. Session cookies are temporary and are deleted when you close your browser; persistent cookies remain on your device for a set period or until you delete them. Cookies enable core functions such as secure login, session continuity, preference storage, analytics, and advertising, and allow us to recognize you across visits and, in some cases, across devices.</PolicyP>
+
       <PolicyH2>Types of Cookies We Use</PolicyH2>
-      <PolicyP>Our Site employs a variety of cookies to meet functional, analytical, and advertising needs. These include:</PolicyP>
       <PolicyH3>Essential Cookies</PolicyH3>
-      <PolicyP>Essential cookies are necessary for the proper functioning of our Site. They support fundamental features like account login, navigation, and access to secure areas. Without these cookies, many basic functionalities of our Site would be inaccessible. For example, they enable you to log in securely and maintain your session while navigating between pages.</PolicyP>
+      <PolicyP>Required for the Services to function, including authentication, security, session management, and access to protected areas. These cannot be disabled through our tools because the Services will not operate without them.</PolicyP>
       <PolicyH3>Performance Cookies</PolicyH3>
-      <PolicyP>Performance cookies help us understand how visitors use our Site. By analyzing data such as page load times, error reports, and user behavior, we can improve the overall functionality and responsiveness of our services. These cookies allow us to address performance issues proactively and ensure an optimal experience for all users.</PolicyP>
+      <PolicyP>Collect information about page load times, errors, and usage patterns so we can diagnose problems and improve responsiveness and reliability.</PolicyP>
       <PolicyH3>Functional Cookies</PolicyH3>
-      <PolicyP>Functional cookies enable the Site to remember choices you make, such as your language preference or region, and provide enhanced features. They make your interactions smoother and more personalized, ensuring that your settings are preserved for future visits. For instance, these cookies may remember your login details to save you time during subsequent visits.</PolicyP>
+      <PolicyP>Remember choices you make, such as language, region, and display preferences, so your settings persist between visits.</PolicyP>
       <PolicyH3>Advertising Cookies</PolicyH3>
-      <PolicyP>Advertising cookies collect data about your browsing habits to deliver ads that are relevant to your interests. They also help us measure the effectiveness of our advertising campaigns. By using these cookies, we can provide a more tailored and engaging online experience while limiting exposure to repetitive ads.</PolicyP>
+      <PolicyP>Collect information about your browsing activity to deliver advertising relevant to your interests, cap ad frequency, and measure campaign effectiveness, including across contexts and devices.</PolicyP>
       <PolicyH3>Third-Party Cookies</PolicyH3>
-      <PolicyP>Third-party cookies are placed by external services that we use, such as analytics providers or social media platforms. These cookies assist in understanding broader user trends and interactions, enabling us to refine our offerings. While we work with trusted partners, the management of third-party cookies remains under their respective policies.</PolicyP>
+      <PolicyP>Placed by external providers we use, such as analytics services and social media platforms. Those cookies are governed by the respective third parties&apos; own policies, and we are not responsible for their practices.</PolicyP>
+
       <PolicyH2>How We Use Cookies</PolicyH2>
-      <PolicyP>Cookies play an integral role in enhancing your experience on our Site. By collecting and storing certain types of data, we can provide services and features that are tailored to your preferences. The cookies we use help us:</PolicyP>
       <PolicyUl>
-        <li>Ensure the smooth and secure operation of our Site and its features.</li>
-        <li>Improve navigation and ease of use by remembering your preferences and settings.</li>
-        <li>Analyze user behavior to identify trends and areas for improvement.</li>
-        <li>Provide personalized content and recommendations based on your interests.</li>
-        <li>Deliver targeted advertisements and measure their effectiveness.</li>
+        <li>Operate the Services securely and reliably;</li>
+        <li>Remember your preferences and settings;</li>
+        <li>Analyze usage to identify trends and improve the Services;</li>
+        <li>Personalize content and recommendations;</li>
+        <li>Deliver, target, and measure advertising.</li>
       </PolicyUl>
-      <PolicyP>These cookies allow us to maintain the functionality and reliability of our Site while continually refining our offerings. By understanding how users engage with our Site, we can implement changes that enhance usability, accessibility, and satisfaction.</PolicyP>
+
       <PolicyH2>Managing Cookies</PolicyH2>
-      <PolicyP>You have control over the cookies stored on your device and can manage your preferences through your browser settings. Most browsers offer options to block or delete cookies, as well as to notify you when a new cookie is being placed. By customizing your settings, you can decide how cookies are handled, balancing functionality with your privacy preferences.</PolicyP>
-      <PolicyP>Keep in mind that disabling certain cookies may impact the functionality and user experience of our Site. Essential features like secure login, saved preferences, and personalized content may not work as intended without cookies. We encourage you to review your settings regularly to ensure they align with your desired level of privacy and functionality.</PolicyP>
-      <PolicyH2>Changes to This Cookie Policy</PolicyH2>
-      <PolicyP>We may update this Cookie Policy from time to time to reflect changes in our practices or evolving regulations. Whenever significant modifications are made, we will update the &quot;Last Updated&quot; date at the top of this policy and may provide additional notifications on our Site. Your continued use of the Site after any changes indicates your acceptance of the updated policy.</PolicyP>
-      <PolicyP>We recommend reviewing this policy periodically to stay informed about how we use cookies and how any changes might affect your experience. Our commitment to transparency ensures that any updates to this policy are clearly communicated and easy to understand.</PolicyP>
-      <PolicyH2>Contact Us</PolicyH2>
-      <PolicyP>If you have any questions or concerns about this Cookie Policy, please feel free to contact us. Your feedback is important to us and helps ensure we meet your expectations regarding transparency and privacy.</PolicyP>
-      <PolicyP>You can reach us at <a href="mailto:privacy@prestonkwei.com" className="text-blue-600 hover:underline">privacy@prestonkwei.com</a>. We are committed to addressing your inquiries promptly and thoroughly to maintain your trust and satisfaction.</PolicyP>
+      <PolicyP>Most browsers let you block or delete cookies and alert you when a cookie is set. Instructions are available in your browser&apos;s help documentation. Disabling cookies may degrade or disable features of the Services, including login, saved preferences, and personalization, and we make no commitment that the Services will function with cookies disabled. Where applicable law grants you rights over tracking technologies, the choices described in our Privacy Policy apply.</PolicyP>
+
+      <PolicyH2>Changes to This Policy</PolicyH2>
+      <PolicyP>We may update this Cookie Policy at any time. Updates are effective upon posting, and the &quot;Last updated&quot; date above will reflect the current revision. Continued use of the Services after an update constitutes acceptance of the revised policy.</PolicyP>
+
+      <PolicyH2>Contact</PolicyH2>
+      <PolicyP>
+        Questions about this Cookie Policy may be directed to <PolicyEmail address='privacy@prestonkwei.com' />.
+      </PolicyP>
     </PolicyLayout>
   )
 }
+
 export default CookiePolicy

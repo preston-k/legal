@@ -1,42 +1,67 @@
 import Link from 'next/link'
+import { PolicyEmail } from '@/components/PolicyContent'
+
+const documents = [
+  {
+    href: '/policies/tos',
+    title: 'Terms of Service',
+    description: 'The binding agreement governing your access to and use of every site and application we operate.',
+  },
+  {
+    href: '/policies/privacy',
+    title: 'Privacy Policy',
+    description: 'What information we collect, how we use and disclose it, and the rights available to you.',
+  },
+  {
+    href: '/policies/cookies',
+    title: 'Cookie Policy',
+    description: 'The cookies and tracking technologies we deploy and how you can manage them.',
+  },
+  {
+    href: '/other/license',
+    title: 'Code Licensing',
+    description: 'The restrictive license terms that apply to our software and source code.',
+  },
+  {
+    href: '/other/domains',
+    title: 'Our Domains',
+    description: 'Every domain owned and operated under the PrestonKwei.com suite of applications.',
+  },
+]
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-slate-800 flex items-center justify-center px-5 md:px-10'>
-      <div className='bg-gray-200 max-w-3xl text-black p-8 rounded-lg shadow-lg  mx-auto w-full text-center'>
-        <h1 className='text-3xl font-bold underline mb-6'>Legal Home - PrestonKwei.com</h1>
-        <h3 className='text-xl font-semibold mb-4'>Overview</h3>
-        <p className='text-sm leading-7 mb-8'>
-          Welcome to PrestonKwei.com and its suite of applications. We are dedicated to delivering the highest quality experiences to our users, and transparency is a key part of our commitment. This includes clearly outlining our Terms of Service, Privacy Policy, and other legal notices, collectively referred to as the &quot;Terms.&quot; By accessing or using any part of our website or services, you acknowledge and agree that you have carefully read, fully understood, and accept to be bound by these Terms. Any questions regarding these terms should be directed to{' '}
-          <a href='mailto:legal@prestonkwei.com' target='_blank' className='text-blue-600 hover:underline'>
-            legal@prestonkwei.com
-          </a>{' '}
-          or (855) 681-5573.
+    <>
+      <section className='px-5 md:px-10 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-24'>
+        <p className='text-xs md:text-sm font-semibold uppercase tracking-[0.45em] text-accent'>PrestonKwei.com</p>
+        <h1 className='mt-8 text-6xl md:text-8xl lg:text-9xl font-extrabold uppercase tracking-tight leading-[0.9] text-white'>Legal</h1>
+        <p className='mt-8 max-w-2xl font-source text-base md:text-lg leading-relaxed text-zinc-400 prose-legal'>
+          By accessing or using any part of PrestonKwei.com or its suite of applications, you acknowledge that you have read, understood, and agree to be bound by the documents below, collectively the &quot;Terms.&quot;
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-          <Link href='/policies/tos' className='block bg-cyan-900 text-white py-4 px-6 rounded-lg font-semibold hover:bg-cyan-800 transition-all'>
-            Terms of Service
-          </Link>
-          <Link href='/policies/privacy' className='block bg-cyan-900 text-white py-4 px-6 rounded-lg font-semibold hover:bg-cyan-800 transition-all'>
-            Privacy Policy
-          </Link>
-        </div>
-        <div className='flex flex-col mt-5 font-semibold'>
-          <div className='grid grid-cols-2 gap-4 w-full'>
-            <Link href='/other/license'>
-              <div className='text-blue-600 hover:underline'>Code Licensing</div>
-            </Link>
-            <Link href='/policies/cookies'>
-              <div className='text-blue-600 hover:underline'>Cookie Policy</div>
-            </Link>
-            <div className='mx-auto col-span-2'>
-              <Link href='/other/domains'>
-                <div className='text-blue-600 hover:underline'>Our Domains</div>
-              </Link>
+      </section>
+
+      <div className='border-t border-zinc-800'>
+        {documents.map((doc, index) => (
+          <Link key={doc.href} href={doc.href} className='group block border-b border-zinc-800'>
+            <div className='flex items-center justify-between gap-6 px-5 md:px-10 lg:px-16 py-7 md:py-9 transition-colors duration-150 hover:bg-white/[0.04]'>
+              <div className='flex items-baseline gap-4 md:gap-8 min-w-0'>
+                <span className='w-5 shrink-0 select-none font-mono text-xs tabular-nums text-zinc-600'>{String(index + 1).padStart(2, '0')}</span>
+                <span className='min-w-0 transition-transform duration-200 group-hover:translate-x-1.5'>
+                  <span className='block text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-white'>{doc.title}</span>
+                  <span className='mt-2.5 block max-w-xl font-source text-sm md:text-base leading-relaxed text-zinc-500'>{doc.description}</span>
+                </span>
+              </div>
+              <i className='bi bi-arrow-right shrink-0 text-base md:text-lg text-zinc-600 transition-all duration-200 group-hover:text-white group-hover:translate-x-0.5' aria-hidden='true' />
             </div>
-          </div>
-        </div>
+          </Link>
+        ))}
       </div>
-    </div>
+
+      <section className='px-5 md:px-10 lg:px-16 py-14 md:py-20'>
+        <p className='font-source text-sm md:text-base leading-relaxed text-zinc-500'>
+          Questions about these Terms may be directed to <PolicyEmail address='legal@prestonkwei.com' /> or (855) 681-5573.
+        </p>
+      </section>
+    </>
   )
 }

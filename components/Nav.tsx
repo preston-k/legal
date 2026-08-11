@@ -1,16 +1,33 @@
 import Link from 'next/link'
 
+const links = [
+  { href: '/policies/tos', label: 'Terms' },
+  { href: '/policies/privacy', label: 'Privacy' },
+  { href: '/policies/cookies', label: 'Cookies' },
+]
+
 const Nav = () => {
   return (
-    <nav className='border-b border-zinc-200'>
-      <div className='max-w-7xl mx-auto w-full px-5 md:px-10 py-4'>
-        <div className='w-full flex'>
-          <Link href='/' className='font-poppins flex items-center justify-center text-black group'>
-            <span className='group-hover:underline'>PrestonKwei.com</span> <div className='rounded ml-1 px-1 text-xs uppercase border'>LEGAL</div>
-          </Link>
-        </div>
+    <header className='sticky top-0 z-40 border-b border-zinc-800 bg-black/80 backdrop-blur-md'>
+      <div className='flex items-center justify-between gap-6 px-5 md:px-10 lg:px-16 h-14 md:h-16'>
+        <Link href='/' className='shrink-0 text-sm font-bold uppercase tracking-tight text-white'>
+          PrestonKwei
+          <span className='font-medium text-zinc-600'> / Legal</span>
+        </Link>
+
+        <nav className='flex items-center gap-5 md:gap-7 text-xs md:text-sm'>
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} className='hidden sm:block text-zinc-500 hover:text-white transition-colors duration-150'>
+              {link.label}
+            </Link>
+          ))}
+          <a href='https://prestonkwei.com' className='group flex items-center gap-1.5 text-zinc-500 hover:text-white transition-colors duration-150'>
+            prestonkwei.com
+            <i className='bi bi-arrow-up-right text-zinc-600 transition-all duration-200 group-hover:text-white group-hover:-translate-y-0.5 group-hover:translate-x-0.5' aria-hidden='true' />
+          </a>
+        </nav>
       </div>
-    </nav>
+    </header>
   )
 }
 

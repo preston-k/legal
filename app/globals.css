@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+  color-scheme: dark;
 }
 
+body {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+/* Long legal prose sits in a narrow column; keep the ragged edge tidy. */
+.prose-legal {
+  text-wrap: pretty;
+}

@@ -1,224 +1,147 @@
-'use client'
+import type { Metadata } from 'next'
 import PolicyLayout from '@/components/PolicyLayout'
-import { PolicyTitle, PolicyLastUpdated, PolicyH2, PolicyH3, PolicyP, PolicyUl, PolicyOl } from '@/components/PolicyContent'
+import { PolicyH2, PolicyH3, PolicyP, PolicyUl, PolicyOl, PolicyNotice, PolicyEmail, PolicyDefList } from '@/components/PolicyContent'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'The binding Terms of Service governing all PrestonKwei.com sites and services.',
+}
 
 const TermsOfService = () => {
   return (
-    <PolicyLayout>
-      <PolicyTitle>Terms of Service</PolicyTitle>
-      <PolicyLastUpdated>Last updated: March 3, 2026</PolicyLastUpdated>
-      <PolicyP>These Terms of Service (&quot;Terms&quot;) govern your access to and use of our websites, services, and products (collectively, the &quot;Services&quot;). By accessing or using the Services, you acknowledge and agree to be legally bound by these Terms. This agreement may affect your legal rights, including the waiver of certain rights.</PolicyP>
-      <PolicyP>PLEASE READ THESE TERMS CAREFULLY. These Terms include an Arbitration Agreement, a Class Action Waiver, and a Jury Trial Waiver that impact your rights. The Arbitration Agreement requires that, with limited exceptions, disputes between you and us must be resolved through binding, individual arbitration rather than in court. By agreeing to arbitration, you waive your right to a trial by judge or jury. Arbitration also involves more limited discovery and appellate rights compared to court proceedings. By using our Services, you agree that you have read and accept to be bound by these Terms.</PolicyP>
+    <PolicyLayout title='Terms of Service' lastUpdated='August 10, 2026' description='This is a binding legal agreement. Read it in full before accessing or using any of our Services.'>
+      <PolicyNotice>
+        THESE TERMS CONTAIN A BINDING ARBITRATION AGREEMENT, A CLASS ACTION WAIVER, A JURY TRIAL WAIVER, A RELEASE OF CLAIMS, A ONE-YEAR LIMITATION ON BRINGING CLAIMS, AND SIGNIFICANT LIMITATIONS ON OUR LIABILITY. THEY MATERIALLY AFFECT YOUR LEGAL RIGHTS. BY ACCESSING OR USING THE SERVICES IN ANY MANNER, YOU AGREE TO BE BOUND BY THESE TERMS IN THEIR ENTIRETY. IF YOU DO NOT AGREE, YOUR SOLE REMEDY IS TO IMMEDIATELY CEASE ALL USE OF THE SERVICES.
+      </PolicyNotice>
 
-      <PolicyH2>Definitions</PolicyH2>
-      <PolicyP>In these Terms, unless the context otherwise requires: &quot;Site&quot; or &quot;Sites&quot; means the PrestonKwei.com suite of websites, applications, and related digital properties. &quot;We,&quot; &quot;us,&quot; and &quot;our&quot; refer to PrestonKwei.com and its affiliates. &quot;You&quot; and &quot;your&quot; refer to the individual or entity accessing or using the Services. &quot;Content&quot; means any text, images, video, audio, software, or other materials. &quot;User Content&quot; means Content that you or other users submit, upload, or transmit through the Services. &quot;Services&quot; means all features, content, and functionality offered through our Sites. &quot;Account&quot; means any registration or profile you create to access certain parts of the Services.</PolicyP>
-
-      <PolicyH2>Overview</PolicyH2>
+      <PolicyH2>1. Acceptance of These Terms</PolicyH2>
+      <PolicyP>These Terms of Service (&quot;Terms&quot;) are a legally binding contract between you and PrestonKwei.com governing your access to and use of all websites, applications, APIs, content, software, and services within the PrestonKwei.com suite (collectively, the &quot;Services&quot;). Your acceptance is not conditioned on registration, signature, or any other formality: any access to or use of the Services, however minimal or incidental, constitutes your unconditional acceptance of these Terms. You further represent that you have the legal capacity and authority to enter into this agreement, and if you use the Services on behalf of an entity, you bind that entity to these Terms.</PolicyP>
       <PolicyP>
-        These Terms of Service (&quot;Terms&quot;) govern your use of all websites within the PrestonKwei.com suite of apps (&quot;Sites&quot;). These Terms are a LEGALLY BINDING agreement between you, and PrestonKwei.com. By accessing or using any of our Sites, you agree to be legally bound by these Terms. If we reasonably believe that your use of our Sites breaches any of these Terms, we reserve the right to terminate your access. For questions, comments, or concerns regarding these Terms, please email us at{' '}
-        <a href='mailto:tos@prestonkwei.com' className='text-blue-600 hover:underline'>
-          tos@prestonkwei.com
-        </a>
-        . It is your responsibility to ensure that your activities on our Sites are compliant with these Terms, as well as with any applicable laws and regulations. We aim to provide a seamless user experience, and your adherence to these Terms helps us maintain the integrity and security of our Sites.
+        We do not negotiate these Terms with individual users. If any portion of these Terms is unacceptable to you, you must not access the Services. Continued access after any modification to these Terms constitutes acceptance of the modification. Questions may be directed to <PolicyEmail address='tos@prestonkwei.com' />, but a pending question does not suspend, qualify, or delay your obligations under these Terms.
       </PolicyP>
 
-      <PolicyH2>Eligibility and Age Requirements</PolicyH2>
-      <PolicyP>In order to use our Sites, you must meet the legal age and eligibility requirements set by local law. In the United States, you must be at least 18 years old to use our Sites or create accounts on our Sites. Minors under the age of 18 but over 13 years old must get permission from a parent or guardian to use our Sites. Parents or guardians who create an account on behalf of a minor take full responsibility and acceptance of these terms of service for our Sites. Minors under the age of 13 should not use our Sites, regardless of whether they have permission from a parent or guardian. Users in countries other than the United States must meet the minimum age requirements set by local law. We strongly encourage parents and guardians to monitor their children&apos;s online activity to ensure they do not access our Sites without the appropriate consent. By using our Sites, you represent and warrant that you meet these eligibility requirements and that all information you provide is accurate and current. We reserve the right to verify eligibility and to suspend or terminate accounts that do not comply.</PolicyP>
+      <PolicyH2>2. Definitions</PolicyH2>
+      <PolicyDefList
+        items={[
+          { term: 'Services', definition: 'All websites, applications, APIs, software, features, content, and functionality offered by PrestonKwei.com, including all domains listed on our Domains page.' },
+          { term: 'We, us, our', definition: 'PrestonKwei.com, together with its affiliates, successors, and assigns.' },
+          { term: 'You, your', definition: 'The individual or entity accessing or using the Services, together with anyone acting on that person\u2019s or entity\u2019s behalf.' },
+          { term: 'Content', definition: 'Any text, images, video, audio, software, data, or other materials available on or through the Services.' },
+          { term: 'User Content', definition: 'Content that you submit, upload, post, transmit, or otherwise make available through the Services.' },
+          { term: 'Account', definition: 'Any registration, credential, or profile you create to access any part of the Services.' },
+        ]}
+      />
 
-      <PolicyH2>Account Registration and Security</PolicyH2>
-      <PolicyP>Certain features of our Sites may require you to create an account. When you register, you must provide accurate, complete, and current information. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account or any other breach of security. We are not liable for any loss or damage arising from your failure to protect your account credentials or from unauthorized use of your account. You may not create an account using a false identity or on behalf of another person without their authorization. We reserve the right to refuse service, suspend or terminate accounts, or remove or edit content at our sole discretion, including for violation of these Terms.</PolicyP>
+      <PolicyH2>3. Eligibility</PolicyH2>
+      <PolicyP>You must be at least 18 years of age to use the Services. Individuals between 13 and 18 years of age may use the Services only with the verifiable consent of a parent or legal guardian who agrees to be bound by these Terms and to accept full responsibility for the minor&apos;s use. The Services are not directed to, and may not be used by, anyone under 13 under any circumstances. By using the Services, you represent and warrant that you satisfy these requirements, that all information you provide is accurate and current, and that you have not previously been suspended or removed from the Services. We reserve the right to demand proof of eligibility at any time and to suspend or terminate any account, without notice or refund, where eligibility cannot be established to our satisfaction.</PolicyP>
 
-      <PolicyH2>What You Can Expect From Us</PolicyH2>
-      <PolicyP>By using our Sites, you can expect us to:</PolicyP>
+      <PolicyH2>4. Accounts and Security</PolicyH2>
+      <PolicyP>You are solely and fully responsible for all activity occurring under your account, whether or not authorized by you. You must safeguard your credentials, and you assume all risk arising from any failure to do so. You must notify us immediately of any unauthorized use, but such notice does not relieve you of responsibility for activity occurring before we are able to act on it. We bear no liability whatsoever for any loss or damage arising from unauthorized use of your account. We may refuse registration, reclaim usernames, and suspend, restrict, or terminate accounts at any time, for any reason or no reason, in our sole and absolute discretion.</PolicyP>
+
+      <PolicyH2>5. Changes to the Terms and the Services</PolicyH2>
+      <PolicyP>We may revise these Terms at any time, in our sole discretion, by posting the revised Terms on this site. Revisions are effective immediately upon posting unless otherwise stated. It is your obligation, and yours alone, to review these Terms regularly; we have no duty to provide individualized notice of changes except where applicable law strictly requires it. Your continued use of the Services after any revision constitutes binding acceptance of the revised Terms.</PolicyP>
+      <PolicyP>We may likewise modify, suspend, degrade, discontinue, or impose limits on any part of the Services at any time, with or without notice, and without liability to you or any third party. We make no commitment that any feature, content, or service will remain available in any form.</PolicyP>
+
+      <PolicyH2>6. Acceptable Use</PolicyH2>
+      <PolicyP>Your license to use the Services is expressly conditioned on your compliance with these Terms. You shall not, and shall not permit or assist any third party to:</PolicyP>
       <PolicyUl>
-        <li>Provide access to the services and features of our Sites as available.</li>
-        <li>Strive to maintain the security and privacy of your data.</li>
-        <li>Communicate any significant changes to these Terms of Service.</li>
+        <li>Breach or circumvent any security, rate-limiting, authentication, or access-control measure of the Services;</li>
+        <li>Upload, transmit, or store content that is unlawful, defamatory, obscene, harassing, discriminatory, infringing, or that we deem objectionable in our sole discretion;</li>
+        <li>Interfere with or disrupt the Services or any server or network connected to them, including through denial-of-service attacks, malware, or excessive load;</li>
+        <li>Access any non-public area of the Services or any system or data belonging to us or any other user;</li>
+        <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity;</li>
+        <li>Use the Services for any commercial purpose not expressly authorized by us in writing, including advertising, spam, or resale;</li>
+        <li>Scrape, crawl, harvest, or extract data from the Services by automated means, or use any Content to train, fine-tune, or evaluate any machine-learning or artificial-intelligence model, without our prior written consent;</li>
+        <li>Collect personal information of other users without their consent;</li>
+        <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of any part of the Services except to the limited extent a statutory right to do so cannot be waived;</li>
+        <li>Remove, alter, or obscure any proprietary notice appearing on the Services.</li>
       </PolicyUl>
-      <PolicyP>Additionally, we commit to providing regular updates on new features and enhancements to improve your experience on our Sites. Our goal is to ensure that you have a positive, engaging, and secure experience while using our services.</PolicyP>
+      <PolicyP>We reserve the right to investigate any suspected violation, to preserve and disclose relevant information to law enforcement or other authorities, and to pursue every remedy available at law or in equity. Violation of this section may result in immediate termination without notice and may expose you to civil and criminal liability. You acknowledge that any breach of this section causes us irreparable harm for which monetary damages are inadequate, entitling us to injunctive relief without the posting of a bond.</PolicyP>
 
-      <PolicyH2>What We Expect From You</PolicyH2>
-      <PolicyP>When using our Sites, we expect that you comply with our:</PolicyP>
-      <PolicyUl>
-        <li>Terms of Service and Privacy Policy.</li>
-        <li>Legal Policies that can be found on this website.</li>
-        <li>Site-Specific Privacy Policy and Terms of Service.</li>
-      </PolicyUl>
-      <PolicyP>You also agree that by submitting data to our Sites, you acknowledge that while we strive to store your data securely, you waive the right to initiate legal action against us in the event of any data breach or leakage. Your cooperation is crucial to maintain the safety and integrity of our online community. Please ensure that your activities on the Sites do not disrupt or interfere with the standard operation of our services, and adhere strictly to the guidelines laid out in our Terms of Service and accompanying policies.</PolicyP>
+      <PolicyH2>7. Monitoring and Enforcement</PolicyH2>
+      <PolicyP>We have the right, but not the obligation, to monitor any activity and User Content on the Services at any time. We may remove, edit, block, or disable access to any User Content at any time, with or without notice, for any reason or no reason. We may disclose your identity and any information about you to any third party who claims that your conduct or content violates their rights, and to any authority when we believe in good faith that disclosure is appropriate. Our decision not to act in one instance does not waive our right to act in any other.</PolicyP>
 
-      <PolicyH2>User Conduct and Acceptable Use</PolicyH2>
-      <PolicyP>You agree to use our Sites in a manner that is lawful, respectful, and in accordance with these Terms. You will not:</PolicyP>
-      <PolicyUl>
-        <li>Engage in any activity that breaches the security of our Sites, including hacking, phishing, spreading malware, deploying bots or scrapers without permission, or attempting to circumvent access controls or authentication.</li>
-        <li>Use our Sites to distribute or store harmful, illegal, defamatory, obscene, harassing, discriminatory, or otherwise offensive content, or content that infringes the intellectual property or privacy rights of others.</li>
-        <li>Interfere with or disrupt the functioning of our Sites or servers, including by overloading systems, introducing viruses, or engaging in denial-of-service or similar attacks.</li>
-        <li>Attempt to gain unauthorized access to any part of our Sites or any related systems, networks, or data belonging to us or other users.</li>
-        <li>Impersonate any person or entity, or misrepresent your affiliation with any person or entity.</li>
-        <li>Use the Services for any commercial purpose not expressly permitted by us, including unsolicited advertising, spam, or pyramid schemes.</li>
-        <li>Collect or harvest personal information of other users without their consent.</li>
-        <li>Use automated means (e.g., scripts, crawlers) to access the Services in a manner that imposes an unreasonable load on our infrastructure or violates our robots.txt or similar guidelines.</li>
-        <li>Reverse engineer, decompile, or disassemble any part of our Sites or attempt to derive source code, except where expressly permitted by applicable law.</li>
-        <li>Remove, alter, or obscure any copyright, trademark, or other proprietary notices on the Services.</li>
-      </PolicyUl>
-      <PolicyP>We reserve the right to investigate suspected violations and to cooperate fully with law enforcement. Violating these guidelines may lead to immediate suspension or termination of your access to our Sites, removal of content, and may expose you to legal action if your behavior causes harm to others or to the integrity of our Sites.</PolicyP>
+      <PolicyH2>8. Our Intellectual Property</PolicyH2>
+      <PolicyP>The Services and all Content (other than User Content), including design, structure, layout, text, graphics, logos, icons, images, audio, video, and software, are owned by us or our licensors and are protected by copyright, trademark, trade dress, and other laws. We grant you only a limited, revocable, non-exclusive, non-transferable, non-sublicensable license to access the Services for your personal, non-commercial use, strictly in accordance with these Terms. We may revoke this license at any time, for any reason, without notice. No other right, title, or interest is granted, whether by implication, estoppel, or otherwise. All rights not expressly granted are reserved.</PolicyP>
 
-      <PolicyH2>Our Intellectual Property</PolicyH2>
-      <PolicyP>The Services, including their design, structure, layout, text, graphics, logos, icons, images, audio, video, software, and other content (excluding User Content), are owned by PrestonKwei.com or our licensors and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, sell, or create derivative works from our Services or any part thereof without our prior written consent. Our names, logos, and related marks are our trademarks; you may not use them without our permission. Nothing in these Terms grants you any right, title, or interest in our intellectual property except the limited license to use the Services in accordance with these Terms.</PolicyP>
+      <PolicyH2>9. User Content and License Grant</PolicyH2>
+      <PolicyP>You retain ownership of your User Content. However, by submitting, uploading, or creating User Content on or through the Services, you grant us a worldwide, perpetual, irrevocable, non-exclusive, royalty-free, fully paid, transferable, and sublicensable (through multiple tiers) license to use, host, store, cache, reproduce, modify, adapt, translate, create derivative works from, communicate, publish, publicly perform, publicly display, and distribute your User Content, in any media or format now known or later developed, for any purpose, including operating, promoting, and improving the Services and developing new products and services. This license survives termination of your account and your cessation of use of the Services.</PolicyP>
+      <PolicyP>To the maximum extent permitted by law, you irrevocably waive, and cause to be waived, any moral rights and rights of attribution or integrity in your User Content as against us and our licensees. You represent and warrant that you own or control all rights in your User Content, that it does not infringe or misappropriate the rights of any third party, and that it complies with these Terms and all applicable laws. We have no obligation to store, retain, return, or provide you copies of any User Content, and we may delete User Content at any time without liability.</PolicyP>
 
-      <PolicyH2>User Content and Intellectual Property</PolicyH2>
-      <PolicyP>Many of our Sites allow you to upload, submit, store, send, receive, or share your content. While you are not obligated in any way to provide content, if you choose to upload or create any content, you are granted a license to your content as outlined below. All content created on these Sites must also abide by these terms.</PolicyP>
-      <PolicyP>Your content remains yours, which means that you retain any intellectual property rights that you have in your content. This includes rights such as:</PolicyP>
-      <PolicyUl>
-        <li>
-          <strong>Copyright:</strong> The exclusive right to copy, distribute, display, and create derivative works from your original content.
-        </li>
-        <li>
-          <strong>Trademarks:</strong> Any logos, brand names, or other distinctive marks you use in your content.
-        </li>
-        <li>
-          <strong>Patents:</strong> If your content includes a new invention, you may have patent rights.
-        </li>
-      </PolicyUl>
-      <PolicyP>You are responsible for ensuring that any content you provide does not violate the intellectual property rights of others and adheres to all applicable laws and regulations. We respect the ownership of your creations and seek to avoid any disputes or legal issues arising from uploaded content.</PolicyP>
-
-      <PolicyH2>License to Your Content</PolicyH2>
-      <PolicyP>By uploading or creating content on our Sites, you grant us a worldwide, non-exclusive, royalty-free license to use, host, store, reproduce, modify, create derivative works, communicate, publish, publicly perform, publicly display, and distribute such content. This license continues even if you stop using our Sites.</PolicyP>
-      <PolicyP>This means we can:</PolicyP>
-      <PolicyUl>
-        <li>
-          <strong>Use your content to provide and improve our services:</strong> For example, we might use your feedback to make our Sites better or use your photos in promotional materials.
-        </li>
-        <li>
-          <strong>Share your content with others:</strong> This could include displaying it on our Sites, sharing it on social media, or using it in marketing campaigns.
-        </li>
-        <li>
-          <strong>Modify your content:</strong> We may need to make changes to your content to fit our platform or to create new features.
-        </li>
-      </PolicyUl>
-      <PolicyP>The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even after you stop using our Sites, but it does not affect your ownership rights, which are retained solely by you. You represent and warrant that you own or have the necessary rights to grant this license and that your content does not infringe any third party&apos;s rights or violate any applicable law. We reserve the right to remove or disable access to any User Content at any time, with or without notice, if we believe it violates these Terms, is objectionable, or for any other reason at our discretion. We are not obligated to store, retain, or provide you copies of User Content you have submitted.</PolicyP>
-
-      <PolicyH2>Copyright and DMCA</PolicyH2>
+      <PolicyH2>10. Feedback</PolicyH2>
       <PolicyP>
-        We respect the intellectual property rights of others and expect users to do the same. If you believe that content on our Sites infringes your copyright, you may submit a notice to our designated agent in accordance with the Digital Millennium Copyright Act (DMCA). Your notice must include: (1) identification of the copyrighted work; (2) identification of the infringing material and its location; (3) your contact information; (4) a statement that you have a good faith belief that use is not authorized; (5) a statement that the information in the notice is accurate and that you are authorized to act on behalf of the copyright owner; and (6) your physical or electronic signature. Send DMCA notices to{' '}
-        <a href='mailto:legal@prestonkwei.com' className='text-blue-600 hover:underline'>
-          legal@prestonkwei.com
-        </a>
-        . We may terminate the accounts of repeat infringers. If you believe your content was removed in error, you may submit a counter-notice as permitted under the DMCA.
+        If you submit feedback, suggestions, or ideas regarding the Services to <PolicyEmail address='feedback@prestonkwei.com' /> or through any other channel (&quot;Feedback&quot;), you assign no obligation to us of any kind. We may use, disclose, reproduce, and exploit Feedback for any purpose, commercial or otherwise, without restriction, attribution, or compensation to you, and you irrevocably waive any claim to the contrary.
       </PolicyP>
 
-      <PolicyH2>Modifications to the Services</PolicyH2>
-      <PolicyP>We may modify, suspend, discontinue, or restrict access to all or any part of the Services at any time, with or without notice. We may add, change, or remove features or functionality. We do not guarantee that any particular feature or content will remain available. Your continued use of the Services after any modification constitutes acceptance of the modified Services. If you do not agree to modifications, you must stop using the Services. We are not liable to you or any third party for any modification, suspension, or discontinuation of the Services.</PolicyP>
-
-      <PolicyH2>Termination</PolicyH2>
-      <PolicyP>We may suspend or terminate your access to our Sites at any time, with or without cause or notice, or if we reasonably believe that you have violated any of these terms. You may terminate your account at any time by contacting us or through account settings if available. Upon termination, you must cease all use of the Sites and any associated content. Termination does not relieve you of obligations incurred prior to termination, including payment obligations and indemnification. Provisions that by their nature should survive termination (including intellectual property, disclaimers, limitation of liability, indemnification, dispute resolution, and governing law) will survive. The decision to terminate access is not taken lightly, and is generally the result of repeated violations of our Terms of Service or engaging in illegal activities using our Sites. We reserve the right to take further legal action if deemed necessary to protect our interests or those of our users.</PolicyP>
-
-      <PolicyH2>Payment and Fees</PolicyH2>
-      <PolicyP>If you purchase any paid services, subscriptions, or products through our Sites, you agree to pay all applicable fees as described at the time of purchase. Fees may be recurring (e.g., subscriptions) or one-time. You must provide accurate billing and payment information. We may use third-party payment processors; your use of those services is subject to their terms. Refunds are governed by our refund policy as stated at the time of purchase or in separate terms. We may change fees upon reasonable notice where required by law or contract. Failure to pay may result in suspension or termination of paid features. All fees are in the currency specified and are exclusive of applicable taxes unless otherwise stated; you are responsible for any taxes due.</PolicyP>
-
-      <PolicyH2>LIMITATION OF WARRANTIES</PolicyH2>
-      <PolicyP>THE SITES AND ALL CONTENT AND SERVICES PROVIDED THROUGH THEM ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, OR ACCURACY. WE DO NOT WARRANT THAT THE SITES WILL BE UNINTERRUPTED, SECURE, ERROR-FREE, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS. WE DO NOT WARRANT THE ACCURACY, COMPLETENESS, OR USEFULNESS OF ANY CONTENT. YOU AGREE THAT YOUR USE OF THE SITES IS AT YOUR SOLE RISK AND DISCRETION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SOME OF THE ABOVE EXCLUSIONS MAY NOT APPLY TO YOU.</PolicyP>
-
-      <PolicyH2>LIMITATION OF LIABILITY</PolicyH2>
-      <PolicyP>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL PRESTONKWEI.COM, ITS AFFILIATES, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SITES; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE SITES, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; (C) ANY CONTENT OBTAINED FROM THE SITES; AND (D) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT. IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICES EXCEED THE GREATER OF THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM OR ONE HUNDRED U.S. DOLLARS ($100). SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES OR OF LIABILITY FOR CERTAIN TYPES OF DAMAGES, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. IN SUCH JURISDICTIONS, OUR LIABILITY WILL BE LIMITED TO THE MAXIMUM EXTENT PERMITTED BY LAW.</PolicyP>
-
-      <PolicyH2>Indemnification</PolicyH2>
-      <PolicyP>You agree to indemnify, defend, and hold harmless PrestonKwei.com, its affiliates, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, expenses, fees (including reasonable attorneys&apos; fees) that we may incur as a result of or arising from your use of the Sites or violation of these terms. This indemnification obligation will survive the termination of your use of the Sites and is a fundamental part of our agreement, enabling us to offer a secure and legal platform for all users.</PolicyP>
-
-      <PolicyH2>Governing Law</PolicyH2>
-      <PolicyP>These Terms are governed by the laws of the State of California and the United States, without regard to their conflict of law principles. You agree to the exclusive personal jurisdiction of the state and federal courts located in California for litigating any claims or disputes that are not subject to arbitration. This provision ensures that any legal matters arising under these Terms are handled in a consistent and predictable manner, benefiting both you and us by providing clarity on jurisdictional issues. The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms.</PolicyP>
-
-      <PolicyH2>Force Majeure</PolicyH2>
-      <PolicyP>We are not liable for any failure or delay in performing our obligations under these Terms where such failure or delay results from circumstances beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, labor disputes, pandemics, shortages of transportation or facilities, fuel, energy, labor, or materials, or failure of third-party telecommunications or infrastructure. If a force majeure event continues for an extended period, we may suspend or terminate the affected Services upon notice to the extent permitted by law.</PolicyP>
-
-      <PolicyH2>Export Compliance</PolicyH2>
-      <PolicyP>You may not use, export, re-export, or transfer the Services or any content therein in violation of applicable export laws and regulations, including those of the United States. You represent that you are not located in a country that is subject to a U.S. government embargo or that has been designated by the U.S. government as a &quot;terrorist supporting&quot; country, and that you are not listed on any U.S. government list of prohibited or restricted parties. You are responsible for complying with all applicable import, export, and sanctions laws in your jurisdiction.</PolicyP>
-
-      <PolicyH2>U.S. Government Rights</PolicyH2>
-      <PolicyP>If you are a U.S. government entity or are acquiring the Services on behalf of the U.S. government, the Services are provided as &quot;Commercial Items&quot; as defined in 48 C.F.R. § 2.101, consisting of &quot;Commercial Computer Software&quot; and &quot;Commercial Computer Software Documentation&quot; as used in 48 C.F.R. § 12.212 or 48 C.F.R. § 227.7202. The Services are licensed to U.S. government end users only as Commercial Items and with only those rights as are granted to other end users pursuant to these Terms.</PolicyP>
-
-      <PolicyH2>Assignment</PolicyH2>
-      <PolicyP>You may not assign or transfer these Terms or your rights hereunder without our prior written consent. Any attempted assignment in violation of this section is void. We may assign or transfer these Terms, or our rights and obligations hereunder, without restriction, including in connection with a merger, acquisition, reorganization, or sale of assets. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties and their permitted successors and assigns.</PolicyP>
-
-      <PolicyH2>Availability and Support</PolicyH2>
-      <PolicyP>We strive to keep the Services available but do not guarantee uninterrupted access. The Services may be unavailable due to maintenance, updates, technical failures, or events beyond our control. We do not guarantee any particular uptime or response time. Support may be offered at our discretion through email, in-product help, or other channels we designate. We are not obligated to provide support or to respond within any particular timeframe unless we have agreed otherwise in a separate agreement.</PolicyP>
-
-      <PolicyH2>Changes to These Terms</PolicyH2>
-      <PolicyP>We may modify these Terms at any time. Notice of changes may be provided through email, on our Sites, or by updating the &quot;Last Updated&quot; date. For material changes, we will provide notice as required by applicable law (e.g., by email or prominent notice on the Sites). Your continued use of our Sites after changes become effective constitutes acceptance of the new terms. If you do not agree to the modified Terms, you must stop using the Services and may terminate your account. It is your responsibility to review these Terms periodically for any changes as they are binding on you.</PolicyP>
-
-      <PolicyH2>Severability</PolicyH2>
-      <PolicyP>If any provision of these Terms is found invalid, illegal, or unenforceable, the remaining provisions will remain in effect. This clause helps to ensure that the entire Terms of Service do not become unenforceable if one part is deemed invalid. It is designed to protect the integrity of the remaining provisions, ensuring that our Terms remain effective and enforceable.</PolicyP>
-
-      <PolicyH2>Entire Agreement</PolicyH2>
-      <PolicyP>These Terms constitute the entire agreement between you and PrestonKwei.com regarding the use of our Sites and supersede all prior agreements and understandings, whether written or oral, relating to the subject matter herein. This clause clarifies that these Terms are the final and complete expression of the agreement between us concerning your use of our Sites, and it prevails over any previous discussions or agreements.</PolicyP>
-
-      <PolicyH2>Privacy Policy</PolicyH2>
-      <PolicyP>Our commitment to your privacy is outlined in our Privacy Policy. By using our Sites, you agree to the collection, use, and sharing of your information as described in our Privacy Policy. We take your privacy seriously and strive to protect your personal information through appropriate measures. Please review our Privacy Policy to understand how we handle your data.</PolicyP>
-
-      <PolicyH2>Third-Party Links and Services</PolicyH2>
-      <PolicyP>Our Sites may contain links to third-party websites or services that are not owned or controlled by PrestonKwei.com. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You acknowledge and agree that PrestonKwei.com shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services available on or through any such websites or services. We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit. The inclusion of any link does not imply our endorsement of the linked site or any association with its operators. Our Sites may also integrate with or use third-party services (e.g., authentication, analytics, payment processing); your use of those features may be subject to the third party&apos;s terms and policies.</PolicyP>
-
-      <PolicyH2>User Feedback</PolicyH2>
+      <PolicyH2>11. Copyright and DMCA</PolicyH2>
       <PolicyP>
-        We welcome and encourage feedback, comments, and suggestions for improvements to our Sites (&quot;Feedback&quot;). You can submit Feedback by emailing us at{' '}
-        <a href='mailto:feedback@prestonkwei.com' className='text-blue-600 hover:underline'>
-          feedback@prestonkwei.com
-        </a>{' '}
-        or through other feedback mechanisms provided within our Sites. By submitting Feedback, you grant us a non-exclusive, worldwide, perpetual, irrevocable, fully-paid, royalty-free license to use and exploit such Feedback for any purpose. We may use your Feedback to make improvements to our services, and you acknowledge that we have no obligation to compensate you for any use of such Feedback.
+        If you believe content on the Services infringes your copyright, submit a notice compliant with the Digital Millennium Copyright Act to <PolicyEmail address='legal@prestonkwei.com' /> including: (1) identification of the copyrighted work; (2) identification and location of the allegedly infringing material; (3) your contact information; (4) a good-faith statement that the use is unauthorized; (5) a statement, under penalty of perjury, that the notice is accurate and you are authorized to act; and (6) your physical or electronic signature. We will terminate the accounts of repeat infringers and may terminate any account upon a single instance of infringement in our discretion. Knowingly submitting a false notice may expose you to liability, including our costs and attorneys&apos; fees.
       </PolicyP>
 
-      <PolicyH2>Dispute Resolution</PolicyH2>
-      <PolicyH3>Informal Dispute Resolution</PolicyH3>
+      <PolicyH2>12. Fees and Payment</PolicyH2>
+      <PolicyP>You agree to pay all fees applicable to any paid feature of the Services at the rates in effect when the charges are incurred, plus all applicable taxes. ALL FEES ARE NON-REFUNDABLE AND ALL SALES ARE FINAL, except where a refund is expressly required by applicable law or expressly stated by us in writing at the time of purchase. We may change our fees at any time; fee changes are effective upon posting unless otherwise stated. Recurring subscriptions renew automatically at the then-current rate until cancelled in accordance with the applicable cancellation procedure. Failure to pay any amount when due may result in immediate suspension or termination of the applicable features without notice and without refund of amounts already paid. You are responsible for all costs we incur collecting overdue amounts, including collection-agency fees and reasonable attorneys&apos; fees.</PolicyP>
+
+      <PolicyH2>13. Termination</PolicyH2>
+      <PolicyP>We may suspend or terminate your access to any or all of the Services at any time, for any reason or no reason, with or without notice, and without liability of any kind. Upon termination, all licenses granted to you end immediately, you must cease all use of the Services, and no fees will be refunded. Termination does not relieve you of any obligation incurred before termination, including payment and indemnification obligations. All provisions that by their nature should survive termination survive, including Sections 8 through 12 and 14 through 20. You may stop using the Services at any time; doing so is your sole right and remedy with respect to any dissatisfaction with the Services or these Terms.</PolicyP>
+
+      <PolicyH2>14. DISCLAIMER OF WARRANTIES</PolicyH2>
+      <PolicyP>THE SERVICES AND ALL CONTENT ARE PROVIDED &quot;AS IS,&quot; &quot;AS AVAILABLE,&quot; AND &quot;WITH ALL FAULTS,&quot; WITHOUT WARRANTY OF ANY KIND WHATSOEVER. TO THE FULLEST EXTENT PERMITTED BY LAW, WE EXPRESSLY DISCLAIM ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, QUIET ENJOYMENT, AND ANY WARRANTY ARISING FROM COURSE OF DEALING OR USAGE OF TRADE. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT ANY DEFECT WILL BE CORRECTED. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM US OR THROUGH THE SERVICES, CREATES ANY WARRANTY NOT EXPRESSLY MADE HEREIN. YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK.</PolicyP>
+
+      <PolicyH2>15. LIMITATION OF LIABILITY</PolicyH2>
+      <PolicyP>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL PRESTONKWEI.COM OR ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUES, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICES, REGARDLESS OF THE THEORY OF LIABILITY AND EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICES SHALL NOT EXCEED THE LESSER OF (A) THE AMOUNTS YOU ACTUALLY PAID US IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (B) FIFTY U.S. DOLLARS ($50). THE EXISTENCE OF MULTIPLE CLAIMS WILL NOT ENLARGE THIS LIMIT. YOU ACKNOWLEDGE THAT THESE LIMITATIONS ARE A FUNDAMENTAL BASIS OF THE BARGAIN AND THAT WE WOULD NOT PROVIDE THE SERVICES WITHOUT THEM. WHERE A JURISDICTION DOES NOT PERMIT A PARTICULAR EXCLUSION OR LIMITATION, OUR LIABILITY IS LIMITED TO THE MAXIMUM EXTENT THAT JURISDICTION PERMITS.</PolicyP>
+
+      <PolicyH2>16. Indemnification</PolicyH2>
+      <PolicyP>You agree to indemnify, defend, and hold harmless PrestonKwei.com and its affiliates, directors, officers, employees, agents, and licensors from and against any and all claims, demands, actions, liabilities, damages, losses, costs, and expenses (including reasonable attorneys&apos; fees and costs of investigation) arising out of or relating to: (a) your use or misuse of the Services; (b) your User Content; (c) your violation of these Terms or of any law or regulation; or (d) your violation of any right of any third party. We reserve the right, at your expense, to assume the exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate fully. You may not settle any such matter without our prior written consent. This obligation survives termination of these Terms.</PolicyP>
+
+      <PolicyH2>17. Release</PolicyH2>
+      <PolicyP>To the fullest extent permitted by law, you release PrestonKwei.com and its affiliates, directors, officers, employees, and agents from all claims, demands, and damages of every kind, known or unknown, suspected or unsuspected, arising out of or relating to disputes between you and any other user or any third party in connection with the Services. If you are a California resident, you expressly waive California Civil Code Section 1542, which provides: &quot;A general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release and that, if known by him or her, would have materially affected his or her settlement with the debtor or released party.&quot;</PolicyP>
+
+      <PolicyH2>18. Dispute Resolution, Arbitration, and Class Action Waiver</PolicyH2>
+      <PolicyH3>Informal Resolution First</PolicyH3>
       <PolicyP>
-        If a dispute arises between you and us relating to these Terms or the use of our Sites, we strongly encourage you to first contact us directly to seek a resolution. You can reach us at{' '}
-        <a href='mailto:legal@prestonkwei.com' className='text-blue-600 hover:underline'>
-          legal@prestonkwei.com
-        </a>
-        . We will make reasonable efforts to address and resolve the dispute informally.
+        Before initiating any proceeding, you must first send a written description of your dispute to <PolicyEmail address='legal@prestonkwei.com' /> and negotiate in good faith for at least sixty (60) days. Any arbitration or permitted court proceeding commenced without completing this step shall be stayed pending compliance.
       </PolicyP>
-
-      <PolicyH3>Binding Arbitration and Class Action Waiver</PolicyH3>
-      <PolicyP>If we are unable to resolve the dispute through informal means, you and PrestonKwei.com agree that any dispute, claim, or controversy arising out of or relating to these Terms or the use of our Sites, including the formation, interpretation, breach, or termination thereof, the relationship between the parties, and any related non-contractual obligations (&quot;Dispute&quot;), shall be finally and exclusively settled by binding arbitration. This arbitration agreement is intended to be broadly interpreted.</PolicyP>
-
-      <PolicyH3>Exceptions</PolicyH3>
-      <PolicyP>The following disputes are excluded from this arbitration agreement:</PolicyP>
-      <PolicyOl>
-        <li>Any claim that is within the jurisdiction of a small claims court, so long as the matter remains in small claims court and proceeds only on an individual (non-class, non-representative) basis.</li>
-        <li>Any claim related to the enforcement or validity of your, our, or either of our licensors&apos; intellectual property rights.</li>
-      </PolicyOl>
-
+      <PolicyH3>Binding Arbitration</PolicyH3>
+      <PolicyP>Any dispute, claim, or controversy arising out of or relating to these Terms or the Services, including their formation, interpretation, breach, or termination, and including any non-contractual claim (&quot;Dispute&quot;), shall be resolved exclusively by final and binding arbitration before a single neutral arbitrator, rather than in court. This arbitration agreement is governed by the Federal Arbitration Act and shall be interpreted as broadly as the law allows. YOU AND PRESTONKWEI.COM EACH WAIVE THE RIGHT TO A TRIAL BY JUDGE OR JURY. Arbitration provides more limited discovery and appellate review than court proceedings.</PolicyP>
       <PolicyH3>Class Action Waiver</PolicyH3>
-      <PolicyP>YOU AND PRESTONKWEI.COM AGREE TO WAIVE ANY RIGHT TO LITIGATE OR ARBITRATE ANY DISPUTE ON A CLASS ACTION BASIS OR IN A PRIVATE ATTORNEY GENERAL CAPACITY. No arbitration or proceeding can be combined with another without the prior written consent of all parties to the arbitrations or proceedings.</PolicyP>
-
-      <PolicyH3>Arbitration Procedure</PolicyH3>
-      <PolicyP>The arbitration shall be conducted by a single, neutral arbitrator. The arbitration shall be conducted at a mutually agreeable location to the parties, or if the parties cannot agree, in the county of your billing address or in Alameda County, California. The language of the arbitration shall be English. The arbitrator shall have the authority to award any remedy or relief that a court of competent jurisdiction could have awarded, but only on an individual basis. The arbitrator&apos;s decision shall be final and binding on the parties. The arbitrator shall apply the law of the State of California and the Federal Arbitration Act. Judgment on the award may be entered in any court of competent jurisdiction. The parties agree that the arbitrator may not consolidate more than one person&apos;s claims and may not preside over any form of representative or class proceeding.</PolicyP>
-
-      <PolicyH3>Costs and Fees</PolicyH3>
-      <PolicyP>Each party shall bear its own costs and expenses, including attorney&apos;s fees, incurred in connection with the arbitration.</PolicyP>
-
-      <PolicyH3>Governing Law</PolicyH3>
-      <PolicyP>The arbitration shall be governed by the Federal Arbitration Act and the substantive laws of California, without regard to its conflicts of law principles.</PolicyP>
-
+      <PolicyP>ALL DISPUTES MUST BE BROUGHT IN THE PARTIES&apos; INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING, INCLUDING ANY PRIVATE ATTORNEY GENERAL ACTION. The arbitrator may not consolidate claims or preside over any form of representative proceeding, and may award relief only in favor of the individual party seeking relief and only to the extent necessary to resolve that party&apos;s individual claim.</PolicyP>
+      <PolicyH3>Procedure</PolicyH3>
+      <PolicyP>The arbitration shall be conducted in English, in Alameda County, California, or another location we agree to in writing, applying the substantive law of the State of California and the Federal Arbitration Act. The arbitrator&apos;s award shall be final and binding, and judgment may be entered in any court of competent jurisdiction. Each party bears its own attorneys&apos; fees and costs, except that if you assert a claim the arbitrator finds frivolous or brought for an improper purpose, you shall reimburse us for all fees and costs we incur.</PolicyP>
+      <PolicyH3>Exceptions</PolicyH3>
+      <PolicyOl>
+        <li>Either party may bring an individual claim in small claims court, provided the matter remains in that court on a strictly individual basis.</li>
+        <li>We may seek injunctive or other equitable relief in any court of competent jurisdiction to protect our intellectual property rights or the security of the Services, without first arbitrating and without posting a bond.</li>
+      </PolicyOl>
+      <PolicyH3>One-Year Limitation on Claims</PolicyH3>
+      <PolicyP>TO THE EXTENT PERMITTED BY LAW, ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICES MUST BE FILED WITHIN ONE (1) YEAR AFTER THE CLAIM ACCRUES, OR IT IS PERMANENTLY BARRED.</PolicyP>
+      <PolicyH3>Opt-Out</PolicyH3>
+      <PolicyP>You may opt out of this arbitration agreement by mailing a written notice to PO Box 20987, Oakland, CA 94620 within thirty (30) days of first becoming subject to it. The notice must include your name, address, and an unambiguous statement that you opt out of arbitration. Opting out of arbitration does not affect any other provision of these Terms, including the class action waiver to the extent enforceable independently.</PolicyP>
       <PolicyH3>Survival</PolicyH3>
-      <PolicyP>This arbitration agreement will survive the termination of these Terms or your use of the Sites.</PolicyP>
+      <PolicyP>This Section 18 survives termination of these Terms and your use of the Services.</PolicyP>
 
-      <PolicyH3>Opt-Out Right</PolicyH3>
-      <PolicyP>You may opt out of this arbitration agreement by sending a written notice to PO Box 20987, Oakland, CA, 94620 within 30 days of first becoming subject to this arbitration provision. The notice must include your name, address, and a clear statement that you wish to opt out of this arbitration agreement.</PolicyP>
+      <PolicyH2>19. Governing Law and Venue</PolicyH2>
+      <PolicyP>These Terms and any Dispute are governed by the laws of the State of California and the United States, without regard to conflict-of-law principles. For any proceeding not subject to arbitration, you irrevocably consent to the exclusive personal jurisdiction and venue of the state and federal courts located in Alameda County, California, and waive any objection based on inconvenient forum. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</PolicyP>
 
-      <PolicyH2>No Waiver</PolicyH2>
-      <PolicyP>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. This clause ensures that the Terms remain enforceable even if one part is deemed invalid, protecting the integrity of our agreement.</PolicyP>
+      <PolicyH2>20. General Provisions</PolicyH2>
+      <PolicyH3>Force Majeure</PolicyH3>
+      <PolicyP>We are not liable for any failure or delay resulting from circumstances beyond our reasonable control, including acts of God, natural disasters, war, terrorism, civil unrest, labor disputes, pandemics, government action, power or telecommunications failures, or failures of third-party providers.</PolicyP>
+      <PolicyH3>Export and Sanctions Compliance</PolicyH3>
+      <PolicyP>You may not use, export, re-export, or transfer the Services in violation of applicable export-control and sanctions laws, including those of the United States. You represent that you are not located in an embargoed jurisdiction and are not on any government list of prohibited or restricted parties.</PolicyP>
+      <PolicyH3>U.S. Government Rights</PolicyH3>
+      <PolicyP>The Services are &quot;Commercial Items&quot; as defined in 48 C.F.R. § 2.101, licensed to U.S. government end users only as Commercial Items with only those rights granted to all other end users under these Terms.</PolicyP>
+      <PolicyH3>Assignment</PolicyH3>
+      <PolicyP>You may not assign or transfer these Terms or any rights hereunder without our prior written consent; any attempt is void. We may assign these Terms freely, including in connection with a merger, acquisition, reorganization, or sale of assets.</PolicyP>
+      <PolicyH3>Severability; No Waiver; Entire Agreement</PolicyH3>
+      <PolicyP>If any provision of these Terms is held invalid or unenforceable, it shall be enforced to the maximum extent permissible and the remaining provisions remain in full force. Our failure to enforce any provision is not a waiver of our right to do so later. These Terms, together with the Privacy Policy and any other policies posted on this site (each incorporated by reference), constitute the entire agreement between you and us and supersede all prior agreements and understandings.</PolicyP>
+      <PolicyH3>Language and Interpretation</PolicyH3>
+      <PolicyP>These Terms are drafted in English; any translation is provided for convenience only and the English version controls. Headings are for convenience and do not affect interpretation. &quot;Including&quot; means &quot;including without limitation,&quot; and &quot;days&quot; means calendar days.</PolicyP>
 
-      <PolicyH2>Contact Information</PolicyH2>
+      <PolicyH2>21. Contact</PolicyH2>
       <PolicyP>
-        If you have any questions about these Terms, please contact us at{' '}
-        <a href='mailto:legal@prestonkwei.com' className='text-blue-600 hover:underline'>
-          legal@prestonkwei.com
-        </a>
-        . For Terms of Service matters you may also write to us at PO Box 20987, Oakland, CA, 94620. We are committed to providing clear and understandable terms, and we welcome your inquiries and feedback to improve our services and terms. We will respond to legitimate requests within a reasonable time as required by applicable law.
+        Questions about these Terms may be directed to <PolicyEmail address='legal@prestonkwei.com' /> or by mail to PO Box 20987, Oakland, CA 94620. We respond to legitimate inquiries within a reasonable time as required by applicable law.
       </PolicyP>
-
-      <PolicyH2>Language and Interpretation</PolicyH2>
-      <PolicyP>These Terms are written in English. Any translation we provide is for convenience only; in the event of a conflict between the English version and a translation, the English version will control. Headings and section titles are for convenience only and do not affect the interpretation of these Terms. The words &quot;include&quot; and &quot;including&quot; are not limiting. References to &quot;days&quot; mean calendar days unless otherwise specified.</PolicyP>
     </PolicyLayout>
   )
 }
+
 export default TermsOfService
