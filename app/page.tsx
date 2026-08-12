@@ -32,22 +32,22 @@ const documents = [
 export default function Home() {
   return (
     <>
-      <section className='px-5 md:px-10 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-24'>
-        <p className='text-xs md:text-sm font-semibold uppercase tracking-[0.45em] text-accent'>PrestonKwei.com</p>
-        <h1 className='mt-8 text-6xl md:text-8xl lg:text-9xl font-extrabold uppercase tracking-tight leading-[0.9] text-white'>Legal</h1>
-        <p className='mt-8 max-w-2xl font-source text-base md:text-lg leading-relaxed text-zinc-400 prose-legal'>
+      <section className='shell pt-16 md:pt-24 pb-14 md:pb-20'>
+        <p className='text-xs font-semibold uppercase tracking-[0.4em] text-accent'>PrestonKwei.com</p>
+        <h1 className='mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight leading-[0.95] text-white'>Legal</h1>
+        <p className='mt-6 max-w-2xl font-source text-base md:text-lg leading-relaxed text-zinc-400 prose-legal'>
           By accessing or using any part of PrestonKwei.com or its suite of applications, you acknowledge that you have read, understood, and agree to be bound by the documents below, collectively the &quot;Terms.&quot;
         </p>
       </section>
 
-      <div className='border-t border-zinc-800'>
+      <div className='border-t border-edge'>
         {documents.map((doc, index) => (
-          <Link key={doc.href} href={doc.href} className='group block border-b border-zinc-800'>
-            <div className='flex items-center justify-between gap-6 px-5 md:px-10 lg:px-16 py-7 md:py-9 transition-colors duration-150 hover:bg-white/[0.04]'>
+          <Link key={doc.href} href={doc.href} className='group block border-b border-edge transition-colors duration-150 hover:bg-white/[0.03]'>
+            <div className='shell flex items-center justify-between gap-6 py-7 md:py-8'>
               <div className='flex items-baseline gap-4 md:gap-8 min-w-0'>
                 <span className='w-5 shrink-0 select-none font-mono text-xs tabular-nums text-zinc-600'>{String(index + 1).padStart(2, '0')}</span>
                 <span className='min-w-0 transition-transform duration-200 group-hover:translate-x-1.5'>
-                  <span className='block text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-white'>{doc.title}</span>
+                  <span className='block text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-white'>{doc.title}</span>
                   <span className='mt-2.5 block max-w-xl font-source text-sm md:text-base leading-relaxed text-zinc-500'>{doc.description}</span>
                 </span>
               </div>
@@ -57,7 +57,7 @@ export default function Home() {
         ))}
       </div>
 
-      <section className='px-5 md:px-10 lg:px-16 py-14 md:py-20'>
+      <section className='shell py-14 md:py-20'>
         <p className='font-source text-sm md:text-base leading-relaxed text-zinc-500'>
           Questions about these Terms may be directed to <PolicyEmail address='legal@prestonkwei.com' /> or (855) 681-5573.
         </p>

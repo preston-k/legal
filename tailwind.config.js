@@ -13,6 +13,10 @@ module.exports = {
       },
       colors: {
         accent: '#3b82f6',
+        /* Off-black: pure #000 reads as a hole on OLED and kills the sense of depth. */
+        ink: '#0c0c0e',
+        surface: '#141417',
+        edge: '#232327',
       },
     },
   },

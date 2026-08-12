@@ -8,8 +8,8 @@ const links = [
 
 const Nav = () => {
   return (
-    <header className='sticky top-0 z-40 border-b border-zinc-800 bg-black/80 backdrop-blur-md'>
-      <div className='flex items-center justify-between gap-6 px-5 md:px-10 lg:px-16 h-14 md:h-16'>
+    <header className='sticky top-0 z-40 border-b border-edge bg-ink/80 backdrop-blur-md'>
+      <div className='shell flex items-center justify-between gap-6 h-14 md:h-16'>
         <Link href='/' className='shrink-0 text-sm font-bold uppercase tracking-tight text-white'>
           PrestonKwei
           <span className='font-medium text-zinc-600'> / Legal</span>

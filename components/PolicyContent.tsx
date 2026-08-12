@@ -21,11 +21,11 @@ export const PolicyLink = ({ href, children }: { href: string; children: React.R
 export const PolicyEmail = ({ address }: { address: string }) => <PolicyLink href={`mailto:${address}`}>{address}</PolicyLink>
 
 export const PolicyNotice = ({ children }: PolicyChildrenProps) => (
-  <div className='border-l-2 border-accent bg-white/[0.03] pl-5 pr-5 py-4 mb-12 font-source text-[0.8125rem] leading-[1.8] tracking-wide text-zinc-400'>{children}</div>
+  <div className='border-l-2 border-accent bg-surface pl-5 pr-5 py-4 mb-12 font-source text-[0.8125rem] leading-[1.8] tracking-wide text-zinc-400'>{children}</div>
 )
 
 export const PolicyDefList = ({ items }: { items: { term: string; definition: string }[] }) => (
-  <dl className='mb-5 divide-y divide-zinc-800 border-y border-zinc-800'>
+  <dl className='mb-5 divide-y divide-edge border-y border-edge'>
     {items.map((item) => (
       <div key={item.term} className='py-4 sm:grid sm:grid-cols-[9rem_1fr] sm:gap-6'>
         <dt className='text-sm font-semibold text-white'>{item.term}</dt>
@@ -36,7 +36,7 @@ export const PolicyDefList = ({ items }: { items: { term: string; definition: st
 )
 
 export const PolicyList = ({ items }: { items: string[] }) => (
-  <ul className='mb-8 divide-y divide-zinc-800 border-y border-zinc-800'>
+  <ul className='mb-8 divide-y divide-edge border-y border-edge'>
     {items.map((item) => (
       <li key={item} className='py-3.5 font-mono text-sm text-white'>
         {item}

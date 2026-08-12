@@ -10,6 +10,18 @@ body {
   font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
+@layer components {
+  /* Single measure for every band on the site so nothing drifts left on wide screens. */
+  .shell {
+    @apply mx-auto w-full max-w-[76rem] px-5 md:px-10 lg:px-12;
+  }
+
+  /* Documents are one column of prose, so they get their own centered measure. */
+  .shell-prose {
+    @apply mx-auto w-full max-w-[50rem] px-5 md:px-10 lg:px-12;
+  }
+}
+
 ::selection {
   background-color: #3b82f6;
   color: #fff;
